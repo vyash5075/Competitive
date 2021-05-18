@@ -16,7 +16,7 @@ public class decompress {
         
         Stack<Integer>st=new Stack<>();
         Queue<String>q=new LinkedList<>();
-        String fg="";
+        String finalstring="";
         for(int i=0;i<str.length();i++){
             char ch=str.charAt(i);
             
@@ -41,11 +41,11 @@ public class decompress {
                    }
                    int s=st.pop();
                    for(int j=0;j<s;j++){
-                       fg=fg+tem;
+                       finalstring=finalstring+tem;
                    }
                    if(st.size()!=0){
-                       q.add(fg);
-                       fg="";
+                       q.add(finalstring);
+                       finalstring="";
                    }
                }
             }   
@@ -55,8 +55,8 @@ public class decompress {
                    while(q.size()>0){
                        tem=tem+q.remove();
                    }
-                    fg=fg+tem;
+                    finalstring=finalstring+tem;
             }
-        System.out.println(fg);
+        System.out.println(finalstring);
     }
 }
